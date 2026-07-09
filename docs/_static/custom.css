@@ -1,0 +1,126 @@
+.bd-article-container {
+    max-width: 54rem;
+}
+
+article.bd-article table th:nth-child(1),
+article.bd-article table td:nth-child(1) {
+    min-width: 7rem;
+}
+
+article.bd-article table th:nth-child(2),
+article.bd-article table td:nth-child(2) {
+    min-width: 11rem;
+}
+
+article.bd-article table code {
+    white-space: nowrap;
+}
+
+article.bd-article table strong code {
+    font-weight: 700;
+}
+
+article.bd-article div.math,
+article.bd-article mjx-container[jax="CHTML"][display="true"] {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+article.bd-article div.math:hover,
+article.bd-article div.math:focus-within,
+article.bd-article mjx-container[jax="CHTML"][display="true"]:hover,
+article.bd-article mjx-container[jax="CHTML"][display="true"]:focus {
+    scrollbar-width: thin;
+}
+
+article.bd-article div.math::-webkit-scrollbar,
+article.bd-article mjx-container[jax="CHTML"][display="true"]::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+article.bd-article div.math:hover::-webkit-scrollbar,
+article.bd-article div.math:focus-within::-webkit-scrollbar,
+article.bd-article mjx-container[jax="CHTML"][display="true"]:hover::-webkit-scrollbar,
+article.bd-article mjx-container[jax="CHTML"][display="true"]:focus::-webkit-scrollbar {
+    height: 0.45rem;
+}
+
+@media (max-width: 991.98px) {
+    html,
+    body {
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0 !important;
+        overflow-x: auto;
+    }
+
+    #pst-header,
+    .bd-header,
+    .bd-header__inner,
+    .bd-page-width,
+    .bd-container,
+    .bd-container__inner,
+    .bd-main,
+    .bd-content,
+    .bd-main .bd-content,
+    .bd-main .bd-content .bd-article-container,
+    article.bd-article {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .bd-container__inner,
+    .bd-main,
+    .bd-main .bd-content {
+        display: block !important;
+    }
+
+    .bd-main .bd-content .bd-article-container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    article.bd-article {
+        width: calc(100vw - 2rem) !important;
+        max-width: calc(100vw - 2rem) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .highlight,
+    .literal-block-wrapper,
+    table,
+    .math,
+    .MathJax {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .highlight pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    p,
+    li {
+        overflow-wrap: break-word;
+    }
+
+    article.bd-article code {
+        overflow-wrap: anywhere;
+    }
+
+    .search-button__default-text,
+    .search-button__kbd-shortcut {
+        display: none !important;
+    }
+}
