@@ -355,7 +355,7 @@ For direct checks, the code can also use $n_k=-2G(\beta^-)$, but the corrected
 form is the default for the self-consistent drivers.
 
 (theory-radial-convolution)=
-## Why the radial kernels look tricky
+## Radial convolution
 
 The model is isotropic, so a three-dimensional convolution can be reduced to
 one radial integral. For a target momentum $k$ and source momentum $p$,
@@ -417,10 +417,11 @@ cell. Therefore `q_interp_mode="q_singular"` requires diagonal cell averages:
 the code replaces only the self-cell radial block by a cell average. It does
 not change the Matsubara transform, the definition of $W$, or the source array.
 
-This is why {ref}`Example 02 <example-02>` is important: without cell averaging,
-grid refinement can look like a numerical mystery. With the Coulomb head
-separated, the singular part is integrated analytically and the regular residual
-is interpolated.
+{ref}`Example 02 <example-02>` quantifies the convergence benefit of diagonal
+cell averaging by comparing point-diagonal and cell-average treatments across a
+sequence of radial grids. In the `q_singular` path, the Coulomb head is separated
+so that the singular part is integrated analytically and only the regular
+residual is interpolated.
 
 (theory-screened-head-coefficient)=
 For an unscreened Coulomb tail the coefficient is simply the Coulomb head. For
