@@ -1,0 +1,11 @@
+G0W0/GW0/scGW q-weighted W(i nu_n) diagnostic.
+Screened interactions are reconstructed from each method's final radial W table.
+Default q average: sum_q w_q X(q, i nu_n) / sum_q w_q.
+Use --average-measure volume for sum_q q^2 w_q X / sum_q q^2 w_q.
+Interaction units in the plots and CSVs: eV Angstrom^3.
+The gap-function plot uses the normalized k-averaged leading Davidson eigenvector.
+The stored Davidson variable is phi_tilde=k Delta; the plot averages Delta.
+GW0/scGW SCF defaults follow example 04: damp=0.98, DIIS space=8, DIIS start=0, max_cycle=300.
+Convergence flags and SCF cycles are stored in gw0_scgw_qavg_w_scales.csv.
+The example writes unconverged rows by default; inspect flags before using lambda.
+Extra no-marker line overlays including G0W0 are written as g0w0_gw0_scgw_qavg_w_lines.* and g0w0_gw0_scgw_gap_function_lines.*.

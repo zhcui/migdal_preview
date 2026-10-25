@@ -1,0 +1,20 @@
+Example 01: sparse-IR round trip for G0
+
+Model:
+  G0(k, iw) = 1 / (iw - (e_k - mu))
+  e_k [Ha] = [-0.3  -0.08  0.    0.07  0.25]
+  mu  [Ha] = 0.015
+
+Sparse-IR grid:
+  beta = 2500 Ha^-1, lambda = 1000, tol = 1.0e-12
+  60 fermion frequencies, 60 fermion tau points
+
+Round trip:
+  G0(iw) -> G0(tau) -> G0(iw)
+  max absolute error = 2.913442e-13
+  max relative error = 4.385472e-15
+
+Files:
+  ir_roundtrip_summary.txt
+  ir_roundtrip_error.csv
+  ir_roundtrip_error.png

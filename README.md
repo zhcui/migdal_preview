@@ -1,9 +1,6 @@
 <h1><img src="docs/_static/logo.svg" alt="Migdal logo" height="80" align="absmiddle"> Migdal</h1>
 
-[![CI](https://github.com/zhcui/migdal/actions/workflows/ci.yml/badge.svg)](https://github.com/zhcui/migdal/actions/workflows/ci.yml)
-[![MPI](https://github.com/zhcui/migdal/actions/workflows/mpi.yml/badge.svg)](https://github.com/zhcui/migdal/actions/workflows/mpi.yml)
 [![Docs](https://github.com/zhcui/migdal_preview/actions/workflows/docs.yml/badge.svg)](https://github.com/zhcui/migdal_preview/actions/workflows/docs.yml)
-[![codecov](https://codecov.io/gh/zhcui/migdal/graph/badge.svg?token=ooPRz3Md29)](https://codecov.io/gh/zhcui/migdal)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-GPLv3-green.svg)](LICENSE)
 
@@ -11,18 +8,12 @@ Migdal implements G0W0, GW0, scGW, and a Takada projected pairing solver for an
 SrTiO3-like one-band model.  The sparse-IR drivers use radial momentum grids,
 Coulomb-aware interpolation, and MPI-ready convolution kernels.
 
-**Pre-publication release note.** This repository currently provides the public
-README and automatically built documentation preview.  The source code,
-runnable scripts, tests, package metadata, code-test workflows, and archived
-software release will be published here together with the accepted article.
-
 ## Layout
 
 - `migdal/`: main package.
 - `examples/`: runnable Migdal examples and reference outputs.
 - `docs/`: Sphinx documentation, including the quickstart, theory guide,
   examples guide, API entry points, output guide, and troubleshooting notes.
-- `migdal/test/`: regression tests.
 
 ## Installation
 
@@ -59,13 +50,11 @@ PY
 
 The radial Cython extensions can fall back to pure Python when explicitly
 disabled or when OpenMP/Cython is unavailable, but that path is mainly for
-debugging and CI fallback checks:
+debugging:
 
 ```bash
 MIGDAL_DISABLE_OPENMP=1 python -m pip install -e .
 MIGDAL_DISABLE_CYTHON_RADIAL=1 python -c "from migdal import radial; assert not radial._cython_radial_available()"
-MIGDAL_DISABLE_CYTHON_RADIAL=1 python -m pytest -q \
-  migdal/test/test_model.py migdal/test/test_grid.py migdal/test/test_freq.py
 ```
 
 ## Examples
@@ -107,35 +96,9 @@ The website is deployed through `.github/workflows/docs.yml`. Pull requests
 build the documentation as a check; pushes to `main` publish `docs/_build/html`
 to GitHub Pages.
 
-
-## Tests
-
-Run the default regression suite with:
-
-```bash
-python -m pytest -q migdal/test
-```
-
-CI runs the default serial suite with Cython/OpenMP kernels and coverage, plus a
-pure-Python fallback job.  MPI checks are opt-in locally and run in a separate
-GitHub Actions workflow:
-
-```bash
-MIGDAL_RUN_MPI_TESTS=1 python -m pytest -q -m mpi \
-  migdal/test/test_mpi.py migdal/test/test_ir_cache.py
-```
-
-Use `MIGDAL_MPIEXEC` to customize the MPI launcher.  For example, with an
-Open MPI launcher that needs oversubscription:
-
-```bash
-MIGDAL_RUN_MPI_TESTS=1 MIGDAL_MPIEXEC="mpirun --oversubscribe" \
-  python -m pytest -q -m mpi migdal/test/test_mpi.py
-```
-
 ## Package checks
 
-CI also checks that source and wheel distributions build cleanly:
+To check that source and wheel distributions build cleanly:
 
 ```bash
 python -m pip install build twine

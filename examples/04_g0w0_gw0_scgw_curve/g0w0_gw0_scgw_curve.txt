@@ -1,0 +1,43 @@
+Example 04: G0W0/GW0/scGW density-curve tutorial
+
+Question:
+  How does the leading pairing eigenvalue lambda(n) change when the
+  normal-state Green's function and screened interaction are updated
+  self-consistently?
+
+Density scan:
+  6 points from 1.000e+23 down to 1.000e+16 cm^-3
+
+Methods:
+  G0W0: fixed G0 and fixed RPA W0.
+  GW0: self-consistent normal-state G with fixed W0.
+  scGW: self-consistent normal-state G and W.
+
+Driver settings used:
+  All three drivers use no-truncation gap solves and
+  diag_average='auto', which selects diagonal cell averaging
+  for this no-truncation comparison.
+  q_interp_mode=q_singular, diag_average_mode=auto
+  sparse-IR file=examples/04_g0w0_gw0_scgw_curve/ir.5
+
+SCF settings:
+  GW0 inserted-continuation max_dex=1.0, restart=off, max_cycle=300.
+  scGW inserted-continuation max_dex=1.0, restart=off.
+  scGW damp=0.98, DIIS space=8.
+  scGW DIIS start=0, max_cycle=300.
+  Fermi-surface pin: on; unconverged rows are recorded with flags.
+
+Result snapshot:
+  G0W0 lambda range: 0.725392 to 4.68246
+  GW0 lambda range: 0.5285 to 1.51519
+  scGW lambda range: 0.498818 to 1.33281
+
+Convergence summary:
+  G0W0: gap 6/6, no normal-state SCF loop
+  GW0: gap 6/6, SCF 6/6, cycles 8-14
+  scGW: gap 6/6, SCF 6/6, cycles 11-17
+
+Files:
+  g0w0_gw0_scgw_curve.csv
+  g0w0_gw0_scgw_curve.png
+  g0w0_gw0_scgw_curve.txt

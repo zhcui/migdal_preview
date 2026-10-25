@@ -20,10 +20,9 @@ PY
 ```
 
 If either value is false, rebuild with the compiler, OpenMP, Cython, and MPI
-development headers installed. The pure-Python fallback is useful for debugging
-and CI fallback tests, but it is not the intended path for production-style
-radial scripts in the {ref}`recommended example order
-<examples-recommended-order>`.
+development headers installed. The pure-Python fallback is useful for
+debugging, but it is not the intended path for production-style radial
+scripts in the {ref}`recommended example order <examples-recommended-order>`.
 
 (troubleshooting-mpi-start)=
 ## MPI run does not start
@@ -35,9 +34,9 @@ python examples/01_ir_noninteracting_gf/run.py --out-dir /tmp/migdal-serial
 ```
 
 Then try the {ref}`small radial smoke check <quickstart-small-radial-smoke>`.
-If your MPI
-launcher rejects the run because of local policy, set `MIGDAL_MPIEXEC` as shown
-in the README and rerun the targeted MPI tests before trusting long
+If your MPI launcher rejects the run because of local policy (for example, an
+Open MPI launcher that needs `--oversubscribe`), adjust the `mpirun` options
+and rerun the smoke check before trusting long
 {ref}`example runs <examples-recommended-order>`.
 
 (troubleshooting-ir-cache-mismatch)=
@@ -160,19 +159,6 @@ python -m sphinx -E -W --keep-going -b linkcheck docs docs/_build/linkcheck
 git diff --check
 ```
 
-For code or driver changes:
-
-```bash
-python -m pytest -q migdal/test
-```
-
-MPI checks are opt-in locally:
-
-```bash
-MIGDAL_RUN_MPI_TESTS=1 python -m pytest -q -m mpi \
-  migdal/test/test_mpi.py migdal/test/test_ir_cache.py
-```
-
 For package changes, also build and check the distributions:
 
 ```bash
@@ -181,5 +167,4 @@ MIGDAL_REQUIRE_OPENMP=1 python -m build
 python -m twine check --strict dist/*
 ```
 
-These checks mirror the project split: serial correctness, MPI behavior,
-documentation rendering, and package metadata are separate failure modes.
+Documentation rendering and package metadata are separate failure modes.

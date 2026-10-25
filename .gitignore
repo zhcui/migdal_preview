@@ -170,10 +170,6 @@ examples/ir.h5
 *.swp
 *.swo
 
-# Local agent workspaces
-.codex/
-.agents/
-
 *.npy
 *.npz
 *.h5

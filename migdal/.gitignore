@@ -1,0 +1,4 @@
+_radial_kernels.c
+_qw_radial_kernels.c
+profile/
+examples/**/ir.5

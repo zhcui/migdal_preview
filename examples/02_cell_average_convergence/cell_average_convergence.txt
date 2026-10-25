@@ -1,0 +1,37 @@
+Example 02: diagonal cell-average convergence tutorial
+
+Question:
+  How much radial-grid resolution is saved by replacing the singular
+  same-cell diagonal block with a finite cell average?
+
+Experiment:
+  Run no-truncation G0W0 at one density for several radial k grids.
+  For each grid, compare two diagonal treatments:
+    point_diag: sample the diagonal W(k, k) value directly.
+    cell_average: replace the same-cell block by its finite cell integral.
+
+Why this example uses q_interp_mode='legacy':
+  The direct W interpolation keeps the point-diagonal branch finite.
+  The q_singular mode represents the Coulomb logarithm exactly and
+  therefore requires diagonal cell averages.
+
+Run settings:
+  density=1.000000e+20 cm^-3, q_interp_mode=legacy, k-pad=4
+  resolutions=50, 100, 200
+  sparse-IR file=examples/ir.h5
+
+Result snapshot:
+  reference lambda=3.50716 from cell_average at nside=200
+  coarsest-grid error: point_diag=3.771e-02, cell_average=3.749e-04
+  cell averaging reduces the coarsest-grid error by about 100.6x
+  point_diag error at the finest grid is still 7.988e-03
+
+Per-grid errors:
+  nside=50, nk=265: point_diag=3.771e-02, cell_average=3.749e-04
+  nside=100, nk=365: point_diag=1.717e-02, cell_average=1.264e-04
+  nside=200, nk=604: point_diag=7.988e-03, cell_average=0.000e+00
+
+Files:
+  cell_average_convergence.csv
+  cell_average_convergence.png
+  cell_average_convergence.txt

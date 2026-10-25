@@ -1,0 +1,78 @@
+Example 05: screening and phonon-control tutorial
+
+Question:
+  Starting from the example 04 G0W0/GW0/scGW density curves, how much
+  of lambda(n) comes from electronic RPA screening, and how much comes
+  from the soft-phonon dielectric factor?
+
+Model formulas:
+  Vtot(q, i nu) = Vc(q) Vph(q, i nu), with Vc(q)=4*pi/(eps_inf q^2) for q>0.
+  W(q, i nu) = Vtot(q, i nu) / [1 - Pi(q, i nu) Vtot(q, i nu)].
+  Vph(q, i nu) = [nu^2 + omega_T(q)^2] / [nu^2 + omega_L(q)^2].
+  The code convention has Pi <= 0; fixing Pi=0 removes electronic RPA screening.
+
+Density scan:
+  6 points from 1.000e+23 down to 1.000e+16 cm^-3
+
+Curves:
+  G0W0: fixed G0 and fixed RPA W0 from example 04.
+  GW0: self-consistent normal-state G with fixed RPA W0.
+  scGW: self-consistent normal-state G and W.
+  GV: control-method run with Pi fixed to 0.
+  G0W0_no_phonon: one-shot run with Vph(q, i nu)=1.
+  GW0_no_phonon: GW0 run with Vph(q, i nu)=1.
+
+Default controls:
+  GV: GW0-style run with Pi fixed to 0, so W=Vtot.
+  G0W0_no_phonon: one-shot no-phonon reference with Vph=1.
+  GW0_no_phonon: GW0-style no-phonon run with RPA screening retained.
+  In every no-phonon curve eps_0 is set to eps_inf, so omega_L=omega_T and Vph=1.
+  GV removes electronic RPA screening while retaining the phonon factor.
+  The no-phonon control removes phonon enhancement while retaining RPA screening.
+
+Z diagnostic:
+  Z_kF_i0 is an imaginary-axis diagnostic from the odd part of Sigma:
+  Z(k, iwn)=1 - Sigma_odd(k, iwn)/(i wn), then a low-frequency
+  fit is evaluated at k_F on the same non-uniform radial k grid.
+  It is not the real-axis quasiparticle residue.
+
+Baseline source:
+  Computed G0W0/GW0/scGW in this run with example-04-style settings.
+
+Driver settings used:
+  No truncation; diag_average='auto' selects diagonal cell averaging.
+  q_interp_mode=q_singular, diag_average_mode=auto.
+  sparse-IR file=examples/04_g0w0_gw0_scgw_curve/ir.5
+  default control method=GW0; default control curves=GV, G0W0_no_phonon, GW0_no_phonon.
+  scGW q grid=500 when scGW curves are computed.
+
+SCF settings:
+  GW0 inserted-continuation max_dex=1.0, restart=off, max_cycle=300.
+  scGW inserted-continuation max_dex=1.0, restart=off.
+  scGW damp=0.98, DIIS space=8, DIIS start=0, max_cycle=300.
+  Fermi-surface pin: on; unconverged rows are recorded with flags.
+
+Result snapshot:
+  G0W0 lambda range: 0.725392 to 4.68246
+  GW0 lambda range: 0.5285 to 1.51487
+  scGW lambda range: 0.498818 to 1.33281
+  GV lambda range: 0.920308 to 1.51633
+  G0W0_no_phonon lambda range: 0.298658 to 8.39551
+  GW0_no_phonon lambda range: 0.256109 to 1.33382
+
+Convergence summary:
+  G0W0: gap 6/6, no normal-state SCF loop
+  GW0: gap 6/6, SCF 6/6, cycles 8-14
+  scGW: gap 6/6, SCF 6/6, cycles 11-17
+  GV: gap 6/6, SCF 6/6, cycles 9-14
+  G0W0_no_phonon: gap 6/6, no normal-state SCF loop
+  GW0_no_phonon: gap 6/6, SCF 6/6, cycles 8-33
+
+Files:
+  screening_phonon_controls.csv
+  screening_phonon_controls_z.csv
+  screening_phonon_controls.png
+  screening_phonon_controls.pdf
+  screening_phonon_controls_z.png
+  screening_phonon_controls_z.pdf
+  screening_phonon_controls.txt

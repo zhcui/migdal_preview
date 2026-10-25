@@ -1,0 +1,2 @@
+include migdal/*.pyx
+include docs/_static/logo.svg

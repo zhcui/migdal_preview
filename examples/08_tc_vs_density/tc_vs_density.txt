@@ -1,0 +1,51 @@
+Tc(n) from temperature scans of lambda(T).
+Methods: G0W0, GW0, scGW.
+Temperatures [K]: 0.1, 0.146948, 0.215936, 0.317313, 0.466284, 0.685194, 1.00688, 1.47958, 2.17421, 3.19495, 4.69491, 6.89906, 10.138, 14.8976, 21.8916, 32.1692, 47.2719, 69.465, 102.077, 150.
+Tc interpolation: lambda vs log(T), highest-temperature lambda=1 crossing.
+Rows marked above_window/below_window are bounds, not interpolated Tc values.
+Tc excludes nonpositive lambda, failed gap solves, and unconverged GW0/scGW rows.
+The lambda(T) plot marks excluded positive rows with x symbols.
+No-truncation diagonal-cell-average settings follow example 04.
+
+method n_cm^-3 status Tc_or_bound_K usable/total excluded bracket_K
+G0W0 1.000000e+23 below_window < 0.1 20/20 0 n/a
+G0W0 3.981072e+21 crossed 22.4143 6/6 0 21.8916-32.1692
+G0W0 1.584893e+20 crossed 120.648 2/2 0 102.077-150
+G0W0 6.309573e+18 crossed 73.1939 3/3 0 69.465-102.077
+G0W0 2.511886e+17 crossed 37.053 5/5 0 32.1692-47.2719
+G0W0 1.000000e+16 crossed 20.4359 7/7 0 14.8976-21.8916
+GW0 1.000000e+23 below_window < 0.1 20/20 0 n/a
+GW0 3.981072e+21 crossed 0.369207 17/17 0 0.317313-0.466284
+GW0 1.584893e+20 crossed 7.2762 9/9 0 6.89906-10.138
+GW0 6.309573e+18 crossed 9.71463 9/9 0 6.89906-10.138
+GW0 2.511886e+17 crossed 4.77423 10/10 0 4.69491-6.89906
+GW0 1.000000e+16 crossed 1.79753 13/13 0 1.47958-2.17421
+scGW 1.000000e+23 below_window < 0.1 20/20 0 n/a
+scGW 3.981072e+21 below_window < 0.1 20/20 0 n/a
+scGW 1.584893e+20 crossed 2.52119 12/12 0 2.17421-3.19495
+scGW 6.309573e+18 crossed 5.52232 10/10 0 4.69491-6.89906
+scGW 2.511886e+17 crossed 3.64222 11/11 0 3.19495-4.69491
+scGW 1.000000e+16 crossed 1.64833 13/13 0 1.47958-2.17421
+
+Example 08 tutorial:
+  Goal: find Tc(n) from lambda(T)=1 while changing temperature at fixed density.
+  Workflow: GW0/scGW cool one fixed-density chain and reuse the previous
+    converged normal state only within that same method and density.
+  Adaptive note: this example does not extend the requested temperature window;
+    the default window is the 20-point log grid 150 K -> 0.1 K.
+  Restart rule: G0W0 has no SCF state; GW0/scGW use restart=True after the first
+    temperature in a chain. If a restarted SCF does not converge, the same
+    temperature is retried once from a cold start; if that also fails, the last
+    converged restart state is kept for the next temperature.
+  Stop rule: a chain stops after the first usable lambda=1 bracket, or after the
+    0.1 K floor if lambda remains below one.
+  Main defaults: G0W0/GW0 nq=500, scGW nq=500, GW0/scGW max_cycle=300/300, density continuation disabled for both GW0 and scGW.
+  Outputs:
+    lambda_vs_temperature.csv/png: raw lambda(T) points and crossing plot.
+    tc_vs_density.csv/png: interpolated Tc values; below_window means Tc < floor.
+    cooling_restart_log.csv: restart provenance for every temperature point.
+    plot.py: redraws figures from saved CSV data without rerunning GW/SCF.
+    production_run.log: full verbose stdout from the production MPI run, if saved.
+  Current summary: 207 lambda rows, 18 Tc rows (below_window=4, crossed=14).
+  Convergence summary: gap failures=0, GW0/scGW SCF failures=0, restart retries=0.
+  Restart bookkeeping: restart-used rows=152, updated states=164; max SCF cycles GW0=14, scGW=16.

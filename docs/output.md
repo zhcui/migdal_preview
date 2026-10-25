@@ -38,6 +38,35 @@ first check the gap and normal-state convergence flags.
 | `nk`, `nq` | Active k-grid and q-grid sizes. |
 | `gap` | `GapResult` with root, raw eigenvalue, cycles, matvecs, and active frequency count. |
 | `denom` | RPA denominator diagnostics. |
+| `timings` | Optional rank-0 wall-time summary, collected only at `verbose >= 6`. |
+
+The timing summary is intentionally small.  When PySCF-style logging is at
+`DEBUG1` (`verbose >= 6`), `timings` records `calls` and accumulated `total_s`
+for the applicable core stages `initialization`, `screening`, `self_energy`,
+and `gap_solver`.  At lower verbosity it is empty, so ordinary calculations do
+not gain stage-level clock reads or timing-dictionary updates; only a cheap
+disabled check remains at the surrounding driver/SCF stage boundaries.
+
+`initialization` starts at entry to a single-point `kernel()` and ends before
+the normal-state SCF, or before the gap solve for `G0W0`.  It includes a lazy
+sparse-IR build/load only when the driver is fresh.  Reproducible scaling jobs
+should therefore construct a fresh driver and call `kernel()` directly rather
+than pre-calling `build()` or entering through `scan()`.
+
+These timers are nested measurements, not a partition of the run.  In
+`G0W0` and `GW0`, fixed-$W_0$ `screening` is part of `initialization`; in
+`ScGW`, `screening` includes the polarization ($\Pi$) calculation and the
+remaining screened-interaction update.  Consequently, the reported stage
+times must not be added together.  They are rank-0 elapsed wall times around
+driver call boundaries; MPI communication and worker waiting already present
+inside a timed call are included.  Use the wall time of the complete Slurm
+step (the command enclosing `srun` or `mpirun`) as the total time for scaling
+comparisons.
+
+Keep the same verbosity for every scaling point.  In particular, `ScGW` at
+`DEBUG1` also enables its existing per-cycle polarization metrics.  Their
+collection cost is included in `screening`; cycle-row output and warnings are
+outside that timer.
 
 `TakadaProjection` returns `TakadaResult` rows with `n_cm3`, `lam`,
 `eps_F_eV`, `k_F_A`, and `symmetry_error`. The `k_F_A` field is a Fermi

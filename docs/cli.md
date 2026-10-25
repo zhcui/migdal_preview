@@ -150,7 +150,7 @@ See {ref}`CSV column meanings <output-csv-columns>` for field meanings and the
 
 The optimized Cython/OpenMP radial kernels are the intended path for
 production-style radial calculations. The pure-Python fallback is useful for
-debugging and CI fallback checks, but it is slow.
+debugging, but it is slow.
 
 Useful environment variables:
 
@@ -159,7 +159,6 @@ Useful environment variables:
 - `MIGDAL_DISABLE_OPENMP=1`: install without OpenMP extensions for fallback
   testing.
 - `MIGDAL_DISABLE_CYTHON_RADIAL=1`: force the Python fallback at runtime.
-- `MIGDAL_MPIEXEC`: override the MPI launcher used by MPI tests.
 - `OMP_NUM_THREADS`: control OpenMP threads per MPI rank. Start with `1`
   unless you are benchmarking.
 

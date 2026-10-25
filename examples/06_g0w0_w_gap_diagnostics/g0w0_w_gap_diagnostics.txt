@@ -1,0 +1,16 @@
+Example 06: $G_0W_0$ $W(i\nu_n)$ and gap-function diagnostics.
+Screened interaction: $W_0=V_{\mathrm{tot}}/(1-\Pi_0 V_{\mathrm{tot}})$.
+Unscreened interaction: $V_{\mathrm{tot}}(q,i\nu_n)=V_c(q)V_{\mathrm{ph}}(q,i\nu_n)$.
+Default q average: $\sum_q w_q X(q,i\nu_n) / \sum_q w_q$.
+Use --average-measure volume for $\sum_q q^2w_q X(q,i\nu_n) / \sum_q q^2w_q$.
+Interaction units in the plots and CSVs: $\mathrm{eV}\,\AA^3$.
+The $W_0$ and $V_{\mathrm{tot}}$ plots share x and y limits.
+Gap-function plots use the normalized k-averaged leading Davidson eigenvector.
+The stored Davidson variable is $\tilde\phi=k\Delta$; the plot averages $\Delta$.
+Use --gap-modes to choose no_trunc, truncated, or both.
+Energy-scale formulas use atomic units internally:
+$E_F=k_F^2/(2m^*)$.
+$\omega_{\mathrm{ph,max}}$ is the maximum phonon feature used for radial-grid sizing.
+For legacy single-pole parameters, $\omega_{\mathrm{ph,max}}=\omega_{\mathrm{LO}}(0)$.
+$E_{\mathrm{pl}}=\sqrt{4\pi n/(m^*\epsilon_\infty)}$.
+$E_{\mathrm{TF}}=q_{\mathrm{TF}}^2/(2m^*)$, $q_{\mathrm{TF}}^2=4m^*k_F/(\pi\epsilon_\infty)$.

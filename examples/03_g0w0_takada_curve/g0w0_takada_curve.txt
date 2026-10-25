@@ -1,0 +1,36 @@
+Example 03: G0W0/Takada density-curve tutorial
+
+Question:
+  How does the leading pairing eigenvalue lambda(n) change when the
+  gap kernel is truncated, kept untruncated, or projected following Takada?
+
+Density scan:
+  6 points from 1.000e+23 down to 1.000e+16 cm^-3
+
+Methods:
+  G0W0_trunc: sparse-IR G0W0 with Matsubara-frequency truncation.
+  G0W0_no_trunc_cellavg: no-truncation sparse-IR G0W0 with automatic diagonal treatment.
+  Takada_projection: dense projected solver in x = xi / eps_F.
+
+Driver settings used:
+  The sparse-IR G0W0 curves use q_interp_mode='q_singular' and
+  diag_average='auto'. q_singular requires diagonal cell averages,
+  so the truncated and no-truncation curves share that treatment.
+  TakadaProjection uses its built-in grid defaults:
+  n_q=20, n_theta=12, n_neg=48, n_pos=52, x_max=1e3.
+
+Run settings:
+  radial nq=500, k-left=200, k-right=200, k-shell=[50, 5000]
+  q_interp_mode=q_singular, diag_average_mode=auto
+  sparse-IR lambda=1e+09, ir_file=examples/ir.h5
+
+Result snapshot:
+  G0W0_trunc lambda range: -2.3905e-06 to 0.809056
+  G0W0_no_trunc_cellavg lambda range: 0.725392 to 4.68245
+  Takada_projection lambda range: 0.00140885 to 0.842883
+
+Files:
+  g0w0_takada_curve.csv
+  takada_curve.csv
+  g0w0_takada_curve.png
+  g0w0_takada_curve.txt

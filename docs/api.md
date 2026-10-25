@@ -130,6 +130,15 @@ multipole phonons.
 | `nk`, `nq` | Active momentum-grid sizes. |
 | `gap` | `GapResult` with eigenvalue, convergence, cycles, matvecs, and active-frequency diagnostics. |
 | `denom` | RPA denominator diagnostics for the screened interaction. |
+| `timings` | Core rank-0 wall timings, or an empty mapping below `verbose=6`. |
+
+At `verbose >= 6` (`DEBUG1`), `timings` contains `calls` and accumulated
+`total_s` for the applicable stages `initialization`, `screening`,
+`self_energy`, and `gap_solver`.  `ScGW` includes its $\Pi$ calculation in
+`screening`; fixed-$W_0$ `screening` in `G0W0` and `GW0` is nested inside
+`initialization`.  The stages therefore must not be summed.  For MPI/OpenMP
+scaling, use the complete Slurm-step wall time as the total runtime; these
+internal timings are only a core-stage breakdown.
 
 `TakadaProjection` returns `TakadaResult` rows with `eps_F_eV`, `k_F_A`
 ($\mathrm{Angstrom}^{-1}$), and a kernel symmetry diagnostic.

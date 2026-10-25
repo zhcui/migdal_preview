@@ -1,0 +1,52 @@
+Example 09: multi-phonon-mode density-curve tutorial
+
+Question:
+  How do the G0W0, GW0, and scGW density curves change when the
+  lattice factor uses three explicit phonon poles instead of the
+  default compressed single pole?
+
+Phonon model:
+  variant=3_mode_dielectric_factor_TO_anchored
+  source=paper_git/calc/3_mode/_params.py
+  F3(i nu)=prod_j (nu^2 + TO_j^2) / prod_j (nu^2 + LO_j^2)
+  m*=2.1, eps_inf=6.16308509, eps0=23000
+  TO meV: 1.238574718, 22.38840563, 73.24152018
+  LO meV: 21.80125087, 55.71866263, 102.1375574
+  generalized LST: prod((LO/TO)^2)=3731.89720271, eps0/eps_inf=3731.89720271
+
+Density scan:
+  6 points from 1.000e+23 down to 1.000e+16 cm^-3
+
+Methods:
+  G0W0: fixed G0 and fixed RPA W0.
+  GW0: self-consistent normal-state G with fixed W0.
+  scGW: self-consistent normal-state G and W.
+
+Driver settings used:
+  All three drivers use no-truncation gap solves and
+  diag_average='auto', which selects diagonal cell averaging
+  for this no-truncation comparison.
+  q_interp_mode=q_singular, diag_average_mode=auto
+  sparse-IR file=examples/04_g0w0_gw0_scgw_curve/ir.5
+
+SCF settings:
+  GW0 restart=off, max_cycle=300, damp=0.98, DIIS space=8.
+  GW0 inserted-continuation max_dex=1.0.
+  scGW restart=off, max_cycle=300, damp=0.98, DIIS space=8.
+  scGW inserted-continuation max_dex=1.0.
+  Fermi-surface pin: on; unconverged rows are recorded with flags.
+
+Result snapshot:
+  G0W0 lambda range: 0.687544 to 3.43662
+  GW0 lambda range: 0.513509 to 1.37046
+  scGW lambda range: 0.484062 to 1.2075
+
+Convergence summary:
+  G0W0: gap 6/6, no normal-state SCF loop
+  GW0: gap 6/6, SCF 6/6, cycles 7-12
+  scGW: gap 6/6, SCF 6/6, cycles 9-14
+
+Files:
+  multi_phonon_modes.csv
+  multi_phonon_modes.png
+  multi_phonon_modes.txt
