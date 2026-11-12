@@ -158,6 +158,9 @@ cython_debug/
 examples/**/ir.5
 examples/**/cache/
 examples/ir.h5
+data/arxiv_260718757/*/output/
+data/arxiv_260718757/compare.py
+data/arxiv_260718757/comparison/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
@@ -174,3 +177,4 @@ examples/ir.h5
 *.npz
 *.h5
 *.hdf5
+!data/arxiv_260718757/ir.h5

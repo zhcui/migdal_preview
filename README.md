@@ -12,6 +12,8 @@ Coulomb-aware interpolation, and MPI-ready convolution kernels.
 
 - `migdal/`: main package.
 - `examples/`: runnable Migdal examples and reference outputs.
+- `data/arxiv_260718757/`: paper data, plotting scripts, and
+  calculation inputs; see its [README](data/arxiv_260718757/README.md).
 - `docs/`: Sphinx documentation, including the quickstart, theory guide,
   examples guide, API entry points, output guide, and troubleshooting notes.
 

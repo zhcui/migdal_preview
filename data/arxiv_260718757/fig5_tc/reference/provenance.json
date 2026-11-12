@@ -1,0 +1,62 @@
+{
+  "argv": [
+    "calc/3_mode/fig5_tc_restart/run_tc_scan.py",
+    "--methods",
+    "scGW",
+    "--densities",
+    "1e+23,1.99526231497e+22,3.98107170553e+21,7.94328234724e+20,1.58489319246e+20,3.16227766017e+19,6.3095734448e+18,1.25892541179e+18,2.51188643151e+17,5.01187233627e+16,1e+16,1.99526231497e+15,3.98107170553e+14,7.94328234724e+13,1.58489319246e+13",
+    "--temperatures",
+    "150,102.077155921,69.4649717396,47.2719116754,32.1692153252,21.8916133907,14.8975575563,10.1380020368,6.89905609759,4.69490683321,3.19495157899,2.17421046993,1.47958147429,1.006876459,0.685193901988,0.466284298463,0.317313166918,0.215936170769,0.146947667817,0.1",
+    "--nq",
+    "600",
+    "--scgw-nq",
+    "600",
+    "--scgw-lowest-density-nq",
+    "750",
+    "--out-dir",
+    "calc/3_mode/fig5_tc_restart/data",
+    "--resume"
+  ],
+  "cwd": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git",
+  "environment": {
+    "FI_PROVIDER": "shm",
+    "MKL_NUM_THREADS": "2",
+    "NUMEXPR_NUM_THREADS": "2",
+    "OMP_NUM_THREADS": "2",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close",
+    "OPENBLAS_NUM_THREADS": "2"
+  },
+  "extra": {
+    "density_dependent_dielectric": null,
+    "fig5_lowest_density_cm3": 15848931924600.0,
+    "fig5_lowest_density_scgw_nq": 750,
+    "fig5_nq": 600,
+    "fig5_scgw_nq": 600,
+    "low_density_scgw_patch": {
+      "densities_cm3": [
+        15848931924600.0,
+        79432823472400.0
+      ],
+      "enabled": true,
+      "implementation": "production default in run_tc_scan.py",
+      "k_shell_min": 200,
+      "method": "scGW",
+      "nq": 600,
+      "scgw_nq": 750,
+      "scgw_scf_damp": 0.995,
+      "scgw_scf_max_cycle": 900,
+      "scgw_seed": "same-temperature GW0 with the same low-density patch",
+      "stop_after_crossing": false,
+      "temperatures": "all 20 Fig. 5 cooling temperatures"
+    },
+    "q_dependent_dielectric": null,
+    "scgw_seed": "same_temperature_GW0",
+    "stage": "fig5_tc_restart"
+  },
+  "git_head": "e4795214db6331d0315e8cfe4ee9b8c74b8880a6",
+  "git_status_short": "M calc/3_mode/audit_results.py\n M calc/3_mode/fig5_tc_restart/data/cooling_restart_log.csv\n M calc/3_mode/fig5_tc_restart/data/lambda_vs_temperature.csv\n M calc/3_mode/fig5_tc_restart/data/model_params.json\n M calc/3_mode/fig5_tc_restart/data/scgw_gw0_seed_log.csv\n M calc/3_mode/fig5_tc_restart/data/tc_vs_density.csv\n M calc/3_mode/fig5_tc_restart/data/tc_vs_density.txt\n M calc/3_mode/fig5_tc_restart/plot.py\n M calc/3_mode/fig5_tc_restart/run_tc_scan.py\n?? calc/3_mode/fig5_tc_restart/data/efstar_line.csv\n?? calc/3_mode/fig5_tc_restart/data/efstar_vs_temperature.csv",
+  "model_param_hash": "9d701e52129847cf",
+  "script": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git/calc/3_mode/fig5_tc_restart/run_tc_scan.py",
+  "time_unix": 1783412061.2898824
+}

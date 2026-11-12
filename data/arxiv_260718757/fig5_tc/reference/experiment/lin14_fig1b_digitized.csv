@@ -1,0 +1,15 @@
+n_cm3,tc_K,series
+5.5e+17,0.086,reduced
+6.79e+17,0.1205,reduced
+1.06e+18,0.175,reduced
+1.2e+18,0.190,reduced
+1.65e+18,0.206,reduced
+1.93e+18,0.198,reduced
+2.25e+18,0.202,reduced
+2.88e+18,0.194,reduced
+3.88e+18,0.153,reduced
+4.11e+18,0.1785,reduced
+1.6e+19,0.242,nb_doped
+3.18e+19,0.3386,nb_doped
+1.6e+20,0.429,nb_doped
+3.47e+20,0.219,nb_doped

@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "calc/3_mode/fig1_scales/plot.py"
+  ],
+  "cwd": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git",
+  "environment": {
+    "FI_PROVIDER": "shm",
+    "MKL_NUM_THREADS": "2",
+    "NUMEXPR_NUM_THREADS": "",
+    "OMP_NUM_THREADS": "2",
+    "OMP_PLACES": "",
+    "OMP_PROC_BIND": "",
+    "OPENBLAS_NUM_THREADS": ""
+  },
+  "extra": {
+    "interaction_factor": "F3_frequency_factor",
+    "interaction_factor_file": "interaction_factor.csv",
+    "interaction_nu_range_meV": [
+      0.01,
+      10000.0
+    ],
+    "n_star_cm3": 4.511394326673872e+20,
+    "reference_energy": "LO_max"
+  },
+  "git_head": "c2e7bae3afa02787d2cbdf804e5cc13c11fc900b",
+  "git_status_short": "M STO-Eliashberg.aux\n M STO-Eliashberg.fdb_latexmk\n M STO-Eliashberg.fls\n M STO-Eliashberg.log\n M STO-Eliashberg.pdf\n M STO-Eliashberg.tex\n M calc/3_mode/audit_summary.txt\n M calc/3_mode/fig1_scales/data/fig_scales_3mode.pdf\n M calc/3_mode/fig1_scales/data/model_params.json\n M calc/3_mode/fig1_scales/data/provenance.json\n M calc/3_mode/fig1_scales/plot.py\n M fig/fig_scales.pdf\n?? calc/3_mode/fig1_scales/data/interaction_factor.csv",
+  "model_param_hash": "9d701e52129847cf",
+  "script": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git/calc/3_mode/fig1_scales/plot.py",
+  "time_unix": 1782451792.6076393
+}

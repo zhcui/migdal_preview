@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "calc/3_mode/fig3_mechanism/run_mechanism_controls.py",
+    "--baseline-csv",
+    "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git/calc/3_mode/fig2_hierarchy/data/g0w0_gw0_scgw_curve.csv",
+    "--out-dir",
+    "calc/3_mode/fig3_mechanism/data",
+    "--fail-unconverged"
+  ],
+  "cwd": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git",
+  "environment": {
+    "FI_PROVIDER": "",
+    "MKL_NUM_THREADS": "2",
+    "NUMEXPR_NUM_THREADS": "",
+    "OMP_NUM_THREADS": "2",
+    "OMP_PLACES": "",
+    "OMP_PROC_BIND": "",
+    "OPENBLAS_NUM_THREADS": ""
+  },
+  "extra": {
+    "baseline_csv": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git/calc/3_mode/fig2_hierarchy/data/g0w0_gw0_scgw_curve.csv",
+    "controls": [
+      "G0V",
+      "GV"
+    ],
+    "stage": "fig3_controls"
+  },
+  "git_head": "e3f31d67c5230f06f9a0d3bfe41ae5e0b399cd47",
+  "git_status_short": "M STO-Eliashberg.aux\n M STO-Eliashberg.fdb_latexmk\n M STO-Eliashberg.log\n M STO-Eliashberg.pdf\n M STO-Eliashberg.tex\n M calc/3_mode/_params.py\n M calc/3_mode/_run_common.py\n M calc/3_mode/audit_results.py\n M calc/3_mode/audit_summary.txt\n M calc/3_mode/fig3_mechanism/data/fig_mechanism_3mode.pdf\n D calc/3_mode/fig3_mechanism/data/g0w0_gap_function.csv\n D calc/3_mode/fig3_mechanism/data/g0w0_gap_function.pdf\n D calc/3_mode/fig3_mechanism/data/g0w0_gap_function_scales.csv\n D calc/3_mode/fig3_mechanism/data/g0w0_qavg_vtot.csv\n D calc/3_mode/fig3_mechanism/data/g0w0_qavg_vtot.pdf\n D calc/3_mode/fig3_mechanism/data/g0w0_qavg_w.csv\n D calc/3_mode/fig3_mechanism/data/g0w0_qavg_w.pdf\n D calc/3_mode/fig3_mechanism/data/g0w0_qavg_w_scales.csv\n D calc/3_mode/fig3_mechanism/data/g0w0_w_gap_diagnostics.txt\n M calc/3_mode/fig3_mechanism/data/model_params.json\n M calc/3_mode/fig3_mechanism/data/provenance.json\n M calc/3_mode/fig3_mechanism/plot.py\n M calc/3_mode/fig3_mechanism/run_gap_diagnostics.py\n M calc/3_mode/fig3_mechanism/run_mechanism_controls.py\n M calc/3_mode/run_all_production.sh\n M fig/fig_mechanism.pdf\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_gap_function.csv\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_gap_function.pdf\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_qavg_vtot.csv\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_qavg_vtot.pdf\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_qavg_w.csv\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_qavg_w.pdf\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_qavg_w.txt\n?? calc/3_mode/fig3_mechanism/data/gw0_scgw_qavg_w_scales.csv\n?? calc/3_mode/fig3_mechanism/data/model_params_controls.json",
+  "model_param_hash": "9d701e52129847cf",
+  "script": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git/calc/3_mode/fig3_mechanism/run_mechanism_controls.py",
+  "time_unix": 1782462930.2885873
+}

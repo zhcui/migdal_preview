@@ -1,0 +1,11 @@
+source,source_doi,source_figure,source_sheet,source_row,series,n_cm3,tc_mid_K,delta_tc_lower_K,delta_tc_upper_K
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,4,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),2.23e+17,0,0,0.43
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,5,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),8e+17,0.38,0.255,0.0652
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,6,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),7.19e+17,0,,0.47
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,7,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),3.8e+18,0.49,0.025,0.02
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,8,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),2.27e+19,0.61,0.012,0.01
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,9,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),5.1e+19,0.69,0.012,0.013
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,10,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),7.8e+19,0.75,0.0075,0.0064
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,11,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),1.1e+20,0.74,0.012,0.013
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,12,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),2.5e+20,0.33,0.027,0.032
+Tomioka et al. 2022,10.1038/s41535-022-00524-9,Fig. 4c bottom,Fig4c,13,Nb:Sr0.95Ba0.05TiO3 (Nb:Ba),3.4e+20,0.21,0.0377,0.0426

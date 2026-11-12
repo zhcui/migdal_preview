@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "calc/3_mode/fig4_projection/run_projection_scan.py",
+    "--n-density",
+    "11",
+    "--out-dir",
+    "calc/3_mode/fig4_projection/data"
+  ],
+  "cwd": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git",
+  "environment": {
+    "FI_PROVIDER": "shm",
+    "MKL_NUM_THREADS": "2",
+    "NUMEXPR_NUM_THREADS": "",
+    "OMP_NUM_THREADS": "2",
+    "OMP_PLACES": "",
+    "OMP_PROC_BIND": "",
+    "OPENBLAS_NUM_THREADS": ""
+  },
+  "extra": {
+    "stage": "fig4_projection"
+  },
+  "git_head": "95a81d14462452ee6d63f843cc82dda4b963d676",
+  "git_status_short": "M STO-Eliashberg.aux\n M STO-Eliashberg.bbl\n M STO-Eliashberg.fdb_latexmk\n M STO-Eliashberg.fls\n M STO-Eliashberg.log\n M STO-Eliashberg.pdf\n M STO-Eliashberg.tex\n?? .gitignore\n?? calc/\n?? fig/fig_conv_GW_1mode.pdf\n?? fig/fig_conv_GW_new.pdf\n?? fig/fig_hierarchy_1mode.pdf\n?? fig/fig_hierarchy_new.pdf\n?? fig/fig_mechanism_1mode.pdf\n?? fig/fig_mechanism_new.pdf\n?? fig/fig_projection_1mode.pdf\n?? fig/fig_projection_new.pdf\n?? fig/fig_scales_1mode.pdf\n?? fig/fig_scales_new.pdf\n?? fig/fig_tc_1mode.pdf\n?? fig/fig_tc_new.pdf\n?? fig/plot_new/",
+  "model_param_hash": "9d701e52129847cf",
+  "script": "/mnt/windows/Dropbox/paper/Postdoc/Cui25-STO_GW/paper_git/calc/3_mode/fig4_projection/run_projection_scan.py",
+  "time_unix": 1782325076.6129518
+}
